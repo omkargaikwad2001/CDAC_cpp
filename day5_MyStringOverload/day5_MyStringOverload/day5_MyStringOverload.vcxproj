@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{5681fe4e-1385-4407-b414-43b672d68e32}</ProjectGuid>
-    <RootNamespace>demo</RootNamespace>
+    <ProjectGuid>{28c8fed0-7ae5-4e70-a2dd-1c9ad92a1017}</ProjectGuid>
+    <RootNamespace>day5MyStringOverload</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -123,11 +123,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Client.cpp" />
-    <ClCompile Include="Header_def.cpp" />
+    <ClInclude Include="MyString.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Header.h" />
+    <ClCompile Include="Client.cpp" />
+    <ClCompile Include="MyString_def.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
