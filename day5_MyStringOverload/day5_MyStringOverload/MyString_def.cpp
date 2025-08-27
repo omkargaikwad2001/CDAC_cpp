@@ -31,13 +31,13 @@ MyString::~MyString() {
 
 // Assignment operator
 MyString& MyString::operator=(const MyString& other) {
-    if (this != &other) {
+    if (this != &other) { //check if not pointing to same memory
         delete[] str; // free old memory
         length = other.length;
         str = new char[length + 1];
         strcpy_s(str, length + 1, other.str);
     }
-    return *this;
+    return *this; //return reference for chaining or assigning
 }
 
 // Concatenation (s1 + s2)
