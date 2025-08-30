@@ -2,9 +2,11 @@
 #include <iostream>
 using namespace std;
 
-Employee::Employee() : empId(0), empName("NA"), dob() {}
+Employee::Employee() : empId(0), empName("Unknown"), dob(1, 1, 2000) {}
 
-Employee::Employee(int id, const char* name, Date d) : empId(id), empName(name), dob(d) {}
+Employee::Employee(int id, const char* name, Date d)
+    : empId(id), empName(name), dob(d) {
+}
 
 Employee::~Employee() {}
 

@@ -2,10 +2,10 @@
 #include <iostream>
 using namespace std;
 
-WageEmployee::WageEmployee() : Employee(), hoursWorked(0), ratePerHour(0) {}
+WageEmployee::WageEmployee() : Employee(), hoursWorked(0), ratePerHour(0.0) {}
 
-WageEmployee::WageEmployee(int id, const char* name, Date dob, int hours, double rate)
-    : Employee(id, name, dob), hoursWorked(hours), ratePerHour(rate) {
+WageEmployee::WageEmployee(int id, const char* name, Date d, int hours, double rate)
+    : Employee(id, name, d), hoursWorked(hours), ratePerHour(rate) {
 }
 
 void WageEmployee::display() const {

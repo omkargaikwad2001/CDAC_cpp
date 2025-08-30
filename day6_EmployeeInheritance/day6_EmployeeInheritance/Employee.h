@@ -3,12 +3,12 @@
 
 class Employee {
 public:
-    Employee();                                  // default ctor
-    Employee(int id, const char* name, Date dob); // param ctor
-    ~Employee();                                 // destructor
+    Employee();
+    Employee(int id, const char* name, Date dob);
+    virtual ~Employee();
 
-    void display() const;                        // display details
-    double calculateSalary() const;              // simple version
+    virtual void display() const;               // virtual for overriding
+    virtual double calculateSalary() const = 0; // pure virtual
 
 protected:
     int empId;

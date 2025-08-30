@@ -3,10 +3,10 @@
 class SalesPerson : public WageEmployee {
 public:
     SalesPerson();
-    SalesPerson(int id, const char* name, Date dob, int hours, double rate, int items, double comm);
+    SalesPerson(int id, const char* name, Date dob, int hours, double rate, int sales, double commission);
 
-    void display() const;
-    double calculateSalary() const;
+    void display() const override;
+    double calculateSalary() const override;
 
 private:
     int itemsSold;

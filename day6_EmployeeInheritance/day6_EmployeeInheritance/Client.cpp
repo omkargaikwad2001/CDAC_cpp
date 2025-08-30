@@ -3,16 +3,16 @@
 using namespace std;
 
 int main() {
-    Date d1(28, 8, 2000);
+    Date d1(10, 5, 1995);
+    Date d2(20, 8, 1990);
 
-    WageEmployee w1(101, "Ramesh", d1, 40, 200);
+    WageEmployee w1(101, "John", d1, 40, 200);
+    SalesPerson s1(102, "Alice", d2, 35, 150, 20, 50);
+
     cout << "--- Wage Employee ---" << endl;
     w1.display();
 
-    cout << endl;
-
-    SalesPerson s1(102, "Suresh", d1, 30, 150, 20, 50);
-    cout << "--- Sales Person ---" << endl;
+    cout << "\n--- Sales Person ---" << endl;
     s1.display();
 
     return 0;

@@ -5,8 +5,8 @@ public:
     WageEmployee();
     WageEmployee(int id, const char* name, Date dob, int hours, double rate);
 
-    void display() const;
-    double calculateSalary() const ;
+    void display() const override;
+    double calculateSalary() const override;
 
 protected:
     int hoursWorked;
