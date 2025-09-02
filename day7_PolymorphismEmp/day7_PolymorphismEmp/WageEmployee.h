@@ -1,20 +1,16 @@
-#include"Employee.h"
-class WageEmployee:public Employee{
+#pragma once
+#include "Employee.h"
 
+class WageEmployee : public Employee {
 public:
+    WageEmployee();
+    WageEmployee(int id, const char* name, Date dob, int hours, double rate);
 
-	WageEmployee();
-
-	WageEmployee(int,int,int, int, const char*, int, int, int);
-
-	int cal_WageSalary();
-
-	void display();
-
+    void accept() override;              
+    void display() const override;
+    double calculateSalary() const override;
 
 protected:
-	int hour;
-	int rate;
-
-
+    int hoursWorked;
+    double ratePerHour;
 };

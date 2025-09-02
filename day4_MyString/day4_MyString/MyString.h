@@ -1,7 +1,6 @@
 class MyString {
 
 private:
-    int length;
     char* str;
 
 public:

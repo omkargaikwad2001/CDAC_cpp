@@ -124,10 +124,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Account.h" />
+    <ClInclude Include="MyString.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Account_def.cpp" />
     <ClCompile Include="Client.cpp" />
+    <ClCompile Include="MyString_def.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

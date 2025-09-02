@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{5681fe4e-1385-4407-b414-43b672d68e32}</ProjectGuid>
-    <RootNamespace>demo</RootNamespace>
+    <ProjectGuid>{103f5341-6d6e-446f-a8c3-b3e4f089f81e}</ProjectGuid>
+    <RootNamespace>day8PolymorphismStudent</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -123,11 +123,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Client.cpp" />
-    <ClCompile Include="Header_def.cpp" />
+    <ClInclude Include="Date.h" />
+    <ClInclude Include="Employee.h" />
+    <ClInclude Include="MyString.h" />
+    <ClInclude Include="Person.h" />
+    <ClInclude Include="Researcher.h" />
+    <ClInclude Include="Student.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Complex.h" />
+    <ClCompile Include="Client.cpp" />
+    <ClCompile Include="Date.cpp" />
+    <ClCompile Include="Employee.cpp" />
+    <ClCompile Include="MyString.cpp" />
+    <ClCompile Include="Person.cpp" />
+    <ClCompile Include="Researcher.cpp" />
+    <ClCompile Include="Student.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

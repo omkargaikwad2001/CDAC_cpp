@@ -1,5 +1,5 @@
 #include "Account.h"
-
+#include"MyString.h"
 int main() {
     Account a1("Omkar", 10000);
     Account a2("Rahul", 20000);
@@ -9,7 +9,7 @@ int main() {
     a2.display();
 
     cout << "\nUpdating Interest Rate to 10%...\n" << endl;
-    Account::updateIntRate(10.0);  // change static variable
+    Account::updateIntRate(10.0);  
 
     cout << "=== After Updating Interest Rate ===" << endl;
     a1.display();

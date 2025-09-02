@@ -5,21 +5,20 @@ using namespace std;
 
 // 1. Default constructor
 MyString::MyString() {
-    length = 0;
     str = new char[1];
     str[0] = '\0';
 }
 
 // 2. Parameterized constructor
 MyString::MyString(const char* s) {
-    length = strlen(s);
+    int length = strlen(s);
     str = new char[length + 1];
     strcpy_s(str, length + 1, s);   // safer strcpy
 }
 
 // 3. Copy constructor
 MyString::MyString(const MyString& other) {
-    length = other.length;
+    int length = strlen(other.str);
     str = new char[length + 1];
     strcpy_s(str, length + 1, other.str);   // safer strcpy
 }
@@ -31,5 +30,5 @@ MyString::~MyString() {
 
 // display function
 void MyString::display() const {
-    cout << str << " (Length: " << length << ")" << endl;
+    cout << str << " (Length: " << strlen(str) << ")" << endl;
 }

@@ -18,24 +18,24 @@
     <ClInclude Include="Employee.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="SalesManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Date.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MyString.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Person.h">
+    <ClInclude Include="SalesPerson.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="WageEmployee.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="SalesPerson.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Employee_def.cpp">
+    <ClCompile Include="SalesManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Client.cpp">
@@ -44,16 +44,16 @@
     <ClCompile Include="Date_def.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Employee_def.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="MyString.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Person_def.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="WageEmployee.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="SalesPerson.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="WageEmployee_def.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

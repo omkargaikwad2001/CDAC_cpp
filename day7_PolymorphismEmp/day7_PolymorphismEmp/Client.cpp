@@ -1,39 +1,24 @@
-#include<iostream>
-//#include"Date.h"
-//#include"MyString.h"
-//#include"Person.h"
-//#include"Employee.h"
-//#include"WageEmployee.h"
-#include"SalesPerson.h"
+#include "WageEmployee.h"
+#include "SalesManager.h"
+#include <iostream>
 using namespace std;
+
 int main() {
+    Employee* e1 = new WageEmployee();    
+    Employee* e2 = new SalesManager();    
 
-	/*
-	Date d1;
-	d1.display();
+    cout << "--- Accept WageEmployee ---" << endl;
+    e1->accept();     
+    cout << "\n--- Display WageEmployee ---" << endl;
+    e1->display();    
 
-	Date d2(29, 8, 2025);
-	d2.display();
-	*/
+    cout << "\n--- Accept SalesManager ---" << endl;
+    e2->accept();     
+    cout << "\n--- Display SalesManager ---" << endl;
+    e2->display();    
 
-	//MyString s1;
-	//s1.display();
+    delete e1;
+    delete e2;
 
-	//MyString s2("Omkar gaikwad");
-	//s2.display();
-
-	/*Person p(25, "Omkar gaikwad", 4, 5, 2001);
-	p.display();*/
-
-	/*Employee e(101, 25, "Omkar gaikwad", 4, 5, 2001);
-	e.display();*/
-
-	WageEmployee w(5,1000,101, 25, "Omkar gaikwad", 4, 5, 2001);
-	w.display();
-
-	SalesPerson p(10,500,5, 1000, 101, 25, "Omkar gaikwad", 4, 5, 2001);
-	p.display();
-
-
-	return 0;
+    return 0;
 }

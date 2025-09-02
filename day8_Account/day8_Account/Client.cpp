@@ -1,77 +1,63 @@
-#include<iostream>
-//#include"Account.h"
-#include"SavingAcc.h"
-#include"RecurringAcc.h";
+#include <iostream>
+#include "SavingAcc.h"
+#include "RecurringAcc.h"
 using namespace std;
+
 int main() {
+    Account* ptr[3];
 
-	/*Account a;
-	a.display();
-	cout << endl << endl;
+    for (int i = 0; i < 3; i++) {
+        int choice;
+        cout << "\n--- Create Account " << (i + 1) << " ---" << endl;
+        cout << "Enter 1 for Saving Account" << endl;
+        cout << "Enter 2 for Recurring Account" << endl;
+        cin >> choice;
 
-	Account a1(111, "Omkar", 56.56);
-	a1.display();*/
+        int accno;
+        char name[50];
+        float balance;
 
-	/*SavingAcc s;
-	s.display();
-	cout << endl << endl;
-	*/
+        cout << "Enter Account Number: ";
+        cin >> accno;
+        cout << "Enter Name: ";
+        cin.ignore();                  // To clear newline in buffer
+        cin.getline(name, 50);
+        cout << "Enter Balance: ";
+        cin >> balance;
 
-	/*SavingAcc s1(123, "Omkar og", 10000.00);
-	s1.display();
+        switch (choice) {
+        case 1:
+            ptr[i] = new SavingAcc(accno, name, balance);
+            break;
 
-	cout << endl << endl;
+        case 2: {
+            double instAmt;
+            int noOfInst;
+            cout << "Enter Installment Amount: ";
+            cin >> instAmt;
+            cout << "Enter Number of Installments: ";
+            cin >> noOfInst;
+            ptr[i] = new RecurringAcc(accno, name, balance, instAmt, noOfInst);
+            break;
+        }
 
-	RecurringAcc r1(123, "Omkar og", 10000.00,2000,10);
-	r1.display();*/
+        default:
+            cout << "Invalid input. Defaulting to Saving Account." << endl;
+            ptr[i] = new SavingAcc(0, "Default", 0.00);
+            break;
+        }
+    }
 
-	Account* ptr[3];
+    cout << "\n--- Account Details ---\n";
+    for (int i = 0; i < 3; i++) {
+        ptr[i]->display();
+        cout << "Net Balance (with interest): " << ptr[i]->cal_NetBalance() << endl;
+        cout << "---------------------------\n";
+    }
 
-	for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 3; i++) {
+        delete ptr[i];
+    }
 
-		int choice;
-		cout << "Enter 1 to show Saving Account Details" << endl;
-		cout << "Enter 2 to show Recurring Account Details" << endl;
-		cin >> choice;
-
-		switch (choice) {
-
-		case 1:
-
-			ptr[i] = new SavingAcc(123, "Omkar og", 10000.00);
-			//ptr[i]->display();
-			cout << endl << endl;
-			break;
-
-		case 2:
-
-			ptr[i] = new RecurringAcc(456, "Omkar og", 10000.00, 2000, 10);
-			//ptr[i]->display();
-			cout << endl << endl;
-			break;
-
-		default:
-			cout << "Invalid input" << endl;
-			break;
-		}
-
-	}
-
-	for (int i = 0; i < 3; i++) {
-		cout << ptr[i]->getAcc() << endl;
-	}
-
-	//for (int i = 0; i < 3; i++) {
-	//	ptr[i]->display();
-	//}
-	//
-	//delete []ptr;
-
-	/*Account* aptr = new SavingAcc(123, "Omkar og", 10000.00);
-	aptr->getIntrest();*/
-
-	Account* aptr = new RecurringAcc(123, "Omkar og", 10000.00, 2000, 10);
-	cout<<dynamic_cast<RecurringAcc*> (aptr)->getInstallationAmt();
-
-	return 0;
+    return 0;
 }

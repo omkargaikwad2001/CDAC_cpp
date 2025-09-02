@@ -9,7 +9,7 @@ int main()
 	a1.display();
 
 	Array a2(5);
-	//a2.accept();
+	a2.accept();
 	a2.display();
 
 	Array a3(a2);

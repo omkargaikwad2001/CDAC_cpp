@@ -1,22 +1,24 @@
-#include"Date.h"
-#include<iostream>
+#include "Date.h"
+#include <iostream>
 using namespace std;
-//default const
+
 Date::Date() {
-	day = 0;
-	month = 0;
-	year = 0;
+    day = 0;
+    month = 0;
+    year = 0;
 }
 
-//para const
-Date::Date(int day, int month, int year) {
-
-	this->day = day;
-	this->month = month;
-	this->year = year;
-
+Date::Date(int d, int m, int y) {
+    day = d;
+    month = m;
+    year = y;
 }
 
-void Date::display() {
-	cout <<"Date : "<< day << "/" << month << "/" << year << endl;
+void Date::accept() {
+    cout << "Enter day, month, year : ";
+    cin >> day >> month >> year;
+}
+
+void Date::display() const {
+    cout << day << "/" << month << "/" << year << endl;
 }

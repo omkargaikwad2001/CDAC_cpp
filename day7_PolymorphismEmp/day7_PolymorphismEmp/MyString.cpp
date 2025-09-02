@@ -1,39 +1,45 @@
-#include<iostream>
-#include"MyString.h"
+#include "MyString.h"
+#include <iostream>
+#include <cstring>
 using namespace std;
 
-//def const
+// Default constructor
 MyString::MyString() {
-	size = 0;
-	name = new char[1];
-	*name = '\0';
+    str = new char[1];
+    str[0] = '\0';
 }
 
-//para const
-MyString::MyString(const char str[]) {
-
-	size = strlen(str);
-	name = new char[strlen(str) + 1];
-	strcpy_s(name, strlen(str) + 1, str);
-
+// Parameterized constructor
+MyString::MyString(const char* s) {
+    int length = strlen(s);
+    str = new char[length + 1];
+    strcpy_s(str, length + 1, s);  // safe copy
 }
 
-MyString::MyString(const MyString& obj) {
-
-	size = strlen(obj.name);
-	name = new char[strlen(obj.name) + 1];
-	strcpy_s(name, strlen(obj.name) + 1, obj.name);
-
+ostream& operator<<(ostream& out, const MyString& s) {
+    out << s.str;
+    return out;
 }
 
+// MyString.cpp
+
+MyString& MyString::operator=(const MyString& other) {
+    if (this != &other) {            
+        delete[] str;                 
+        int length = strlen(other.str);
+        str = new char[length + 1];   
+        strcpy_s(str, length + 1, other.str);  
+    }
+    return *this;                     
+}
+
+
+// Destructor
 MyString::~MyString() {
-	if (name) {
-		delete[]name;
-	}
-	name = NULL;
+    delete[] str;
 }
 
-
-void MyString::display() {
-	cout << "Name : " << name << endl;
+// Display function
+void MyString::display() const {
+    cout << str << " (Length: " << strlen(str) << ")" << endl;
 }

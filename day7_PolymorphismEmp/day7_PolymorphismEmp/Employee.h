@@ -1,16 +1,19 @@
-#include"Person.h"
+#pragma once
+#include "MyString.h"
+#include "Date.h"
+
 class Employee {
-
 public:
+    Employee();
+    Employee(int id, const char* name, Date dob);
+    virtual ~Employee();
 
-	Employee();
+    virtual void accept();               
+    virtual void display() const;        
+    virtual double calculateSalary() const = 0;
 
-	Employee(int, int, const char*, int, int, int);
-
-	void display();
-
-private:
-	int eid;
-	Person person;
-
+protected:
+    int empId;
+    MyString empName;
+    Date dob;
 };

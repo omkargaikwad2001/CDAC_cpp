@@ -1,28 +1,23 @@
-#include<iostream>
-#include"SalesPerson.h"
+#include "SalesPerson.h"
+#include <iostream>
 using namespace std;
 
-SalesPerson::SalesPerson() {
-	items = 0;
-	commission = 0;
+SalesPerson::SalesPerson() : WageEmployee(), itemsSold(0), commissionPerItem(0.0) {}
+
+SalesPerson::SalesPerson(int id, const char* name, Date d, int hours, double rate, int sales, double commission)
+    : WageEmployee(id, name, d, hours, rate), itemsSold(sales), commissionPerItem(commission) {
 }
 
-SalesPerson::SalesPerson(int items, int commission, int hour, int rate, int eid, int age, const char* name, int day, int month, int year) 
-	: WageEmployee(hour, rate, eid, age, name, day, month, year){
-	this->items = items;
-	this->commission = commission;
+void SalesPerson::display() const {
+    Employee::display(); // only prints ID, Name, DOB
+    cout << "Hours Worked: " << hoursWorked << endl;
+    cout << "Rate per Hour: " << ratePerHour << endl;
+    cout << "Items Sold: " << itemsSold << endl;
+    cout << "Commission per Item: " << commissionPerItem << endl;
+    cout << "Total Salary (with Commission): " << calculateSalary() << endl;
 }
 
-int SalesPerson::cal_SalesSalary() {
-	return (hour * rate) + (items * commission);
-}
 
-void SalesPerson::display() {
-	cout << "\n\n--------SalesPerson Details--------" << endl;
-	Employee::display();
-	cout << "Items sold : " << items << endl;
-	cout << "Commission : " << commission << endl;
-	cout << "Salary : " << cal_SalesSalary();
-
-
+double SalesPerson::calculateSalary() const {
+    return (hoursWorked * ratePerHour) + (itemsSold * commissionPerItem);
 }
